@@ -4,8 +4,8 @@ const db = require('../models');
 const router = express.Router();
 
 router.get('/', async (req, res, next) => { // GET /api/posts
-  console.log(`req.query....................`);
-  console.log(req.query);
+ 
+  console.log(req.user);
 
   try {
     let where = {};

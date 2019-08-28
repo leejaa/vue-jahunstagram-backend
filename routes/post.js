@@ -31,7 +31,7 @@ router.post('/', isLoggedIn , async (req, res, next) => { // POST /api/post
     const newPost = await db.Post.create({
       content: req.body.content,
       title: req.body.title,
-      UserId: 1,
+      UserId: req.user.id,
     });
     // if (hashtags) {
     //   const result = await Promise.all(hashtags.map(tag => db.Hashtag.findOrCreate({
